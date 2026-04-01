@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crossbeam — Settings</title>
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="page-header">
+      <div class="page-header-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </div>
+      <h1>Crossbeam Settings</h1>
+    </header>
+
+    <main>
+      <!-- Server & Account -->
+      <section class="card" id="section-account">
+        <div class="card-header"><h2>Account</h2></div>
+        <div class="card-body">
+
+          <div class="field">
+            <label for="server-url">Server URL</label>
+            <input id="server-url" type="text" placeholder="http://localhost:3000" />
+          </div>
+
+          <!-- Logged-out state -->
+          <div id="auth-form">
+            <div class="field" style="margin-bottom: 4px;">
+              <label for="email">Email</label>
+              <input id="email" type="email" placeholder="you@example.com" autocomplete="email" />
+            </div>
+            <div class="field">
+              <label for="password">Password</label>
+              <input id="password" type="password" placeholder="••••••••" autocomplete="current-password" />
+            </div>
+            <div id="auth-error" class="error-msg hidden"></div>
+            <div class="btn-row">
+              <button id="login-btn" class="btn-primary">Log in</button>
+              <button id="register-btn" class="btn-secondary">Register</button>
+            </div>
+          </div>
+
+          <!-- Logged-in state -->
+          <div id="account-info" class="hidden">
+            <div class="account-row">
+              <div class="account-avatar" id="account-avatar">?</div>
+              <div class="account-info-text">
+                <p id="account-name" class="account-name"></p>
+                <p id="account-email" class="account-email"></p>
+              </div>
+              <button id="logout-btn" class="btn-danger">Log out</button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Devices -->
+      <section class="card" id="section-devices">
+        <div class="card-header"><h2>Devices</h2></div>
+        <div class="card-body">
+          <div id="devices-list">
+            <p class="muted">Log in to see your devices.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="../browser-polyfill.min.js"></script>
+  <script src="../shared/constants.js"></script>
+  <script src="../shared/storage.js"></script>
+  <script src="../shared/api.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>
